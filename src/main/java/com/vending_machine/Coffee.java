@@ -3,7 +3,11 @@ package com.vending_machine;
 import java.util.List;
 
 public class Coffee implements Product {
-    List<CoffeeDecorator> toppings;
+    private List<CoffeeDecorator> toppings;
+
+    public Coffee(List<CoffeeDecorator> toppings) {
+        this.toppings = toppings;
+    }
 
     @Override
     public String productName() {
@@ -26,5 +30,13 @@ public class Coffee implements Product {
 
     public void addTopping(CoffeeDecorator coffeeDecorator) {
         toppings.add(coffeeDecorator);
+    }
+
+    public List<CoffeeDecorator> getToppings() {
+        return toppings;
+    }
+
+    public void setToppings(List<CoffeeDecorator> toppings) {
+        this.toppings = toppings;
     }
 }

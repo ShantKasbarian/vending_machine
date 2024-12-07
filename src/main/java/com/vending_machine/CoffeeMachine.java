@@ -2,17 +2,29 @@ package com.vending_machine;
 
 public class CoffeeMachine extends VendingMachine {
 
-    public Product serveProduct(String[] productName, Coffee coffee) {
+    public Product serveProduct(Topping[] toppings, Coffee coffee) {
         int balance = this.getBalance();
-        Product product = new ServeToppings().serveTopping(productName, coffee);
+        Coffee product = new ServeToppings().serveTopping(toppings, coffee);
 
-        if (balance < product.productPrice()) {
+        int total = product.productPrice();
+
+        StringBuffer description = new StringBuffer();
+        description.append(product.productDescription());
+
+        for(CoffeeDecorator coffeeDecorator: product.getToppings()) {
+            total+= coffeeDecorator.productPrice();
+            description.append(coffeeDecorator.productDescription());
+        }
+
+        if (balance < total) {
             throw new RuntimeException("insufficient funds");
         }
 
-        balance -= product.productPrice();
+        balance -= total;
 
         setBalance(balance);
+
+        System.out.println(description);
 
         return product;
     }

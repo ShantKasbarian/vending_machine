@@ -8,16 +8,16 @@ public class MilkDecorator extends CoffeeDecorator {
 
     @Override
     public String productName() {
-        return this.name() + " milk";
+        return "milk";
     }
 
     @Override
     public int productPrice() {
-        return this.price() + 50;
+        return 50;
     }
 
     @Override
     public String productDescription() {
-        return this.description() + " and milk";
+        return " and milk";
     }
 }

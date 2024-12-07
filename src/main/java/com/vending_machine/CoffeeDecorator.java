@@ -7,15 +7,11 @@ public abstract class CoffeeDecorator implements Product {
         this.coffee = coffee;
     }
 
-    public String name() {
-        return coffee.productName();
+    public Coffee getCoffee() {
+        return coffee;
     }
 
-    public int price() {
-        return coffee.productPrice();
-    }
-
-    public String description() {
-        return coffee.productDescription();
+    public void setCoffee(Coffee coffee) {
+        this.coffee = coffee;
     }
 }

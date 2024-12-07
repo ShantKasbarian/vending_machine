@@ -12,11 +12,11 @@ public class SugarDecorator extends CoffeeDecorator {
 
     @Override
     public int productPrice() {
-        return this.price() + 50;
+        return 50;
     }
 
     @Override
     public String productDescription() {
-        return this.description() + " and sugar";
+        return " and sugar";
     }
 }

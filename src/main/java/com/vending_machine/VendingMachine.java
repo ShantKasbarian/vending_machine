@@ -4,7 +4,7 @@ public abstract class VendingMachine {
     private int balance = 0;
 
     public void insertCoin(int coin) {
-        balance = new CoinValidator().validate(coin);
+        balance += new CoinValidator().validate(coin);
     }
 
     public int getBalance() {
