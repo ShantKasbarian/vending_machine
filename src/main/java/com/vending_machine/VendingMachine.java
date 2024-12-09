@@ -11,7 +11,7 @@ public abstract class VendingMachine {
         return balance;
     }
 
-    protected void setBalance(int balance) {
+    public void setBalance(int balance) {
         this.balance = balance;
     }
 }

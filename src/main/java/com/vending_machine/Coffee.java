@@ -1,7 +1,5 @@
 package com.vending_machine;
 
-import java.util.List;
-
 public class Coffee extends Product {
     public Coffee() {
         this.setDescription("black coffee made by our finest coffee beans");
