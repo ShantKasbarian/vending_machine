@@ -3,11 +3,12 @@ package com.vending_machine;
 public class Main {
     public static void main(String[] args) {
         CoffeeMachine coffeeMachine = new CoffeeMachine();
-        coffeeMachine.insertCoin(500);
+        coffeeMachine.insertCoin(200);
+        coffeeMachine.insertCoin(50);
 
-        Topping[] toppings = {Topping.MILK, Topping.SUGAR};
+        Topping[] toppings = {Topping.MILK};
 
-        Product coffee = coffeeMachine.serveProduct(toppings, new Coffee());
+        Product coffee = coffeeMachine.serveProduct(toppings, new Tea());
         System.out.println("your new balance = " + coffeeMachine.getBalance());
         System.out.println(coffee.getDescription());
 
