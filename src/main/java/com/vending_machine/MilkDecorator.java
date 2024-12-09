@@ -1,9 +1,10 @@
 package com.vending_machine;
 
-public class MilkDecorator extends CoffeeDecorator {
+public class MilkDecorator extends BeverageDecorator {
+    private Product product;
 
-    public MilkDecorator(Coffee coffee) {
-        super(coffee);
+    public MilkDecorator(Product product) {
+        this.product = product;
     }
 
     @Override
@@ -13,11 +14,11 @@ public class MilkDecorator extends CoffeeDecorator {
 
     @Override
     public int productPrice() {
-        return 50;
+        return this.product.productPrice() + 50;
     }
 
     @Override
-    public String productDescription() {
-        return " and milk";
+    public String getDescription() {
+        return this.product.getDescription() + " and milk";
     }
 }

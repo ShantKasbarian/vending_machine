@@ -1,14 +1,14 @@
 package com.vending_machine;
 
 public class ServeSnacks {
-    public Product serveSnack(String productName) {
+    public Product serveSnack(Snack snack) {
         Product product;
 
-        switch(productName.toLowerCase()) {
-            case "chocolate":
+        switch(snack) {
+            case Snack.CHOCOLATE:
                 product = new Chocolate();
                 break;
-            case "chips":
+            case Snack.CHIPS:
                 product = new Chips();
                 break;
             default:

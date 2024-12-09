@@ -1,24 +1,24 @@
 package com.vending_machine;
 
 public class ServeToppings {
-    public Coffee serveTopping(Topping[] toppings, Coffee coffee) {
+    public Product serveTopping(Topping[] toppings, Product product) {
 
         if (toppings == null) {
-            return coffee;
+            return product;
         }
 
         for (Topping topping : toppings) {
             switch (topping) {
                 case Topping.MILK:
-                    coffee.addTopping(new MilkDecorator(coffee));
+                    product = new MilkDecorator(product);
                     break;
                 case Topping.SUGAR:
-                    coffee.addTopping(new SugarDecorator(coffee));
+                    product = new SugarDecorator(product);
                     break;
             }
         }
 
-        return coffee;
+        return product;
     }
 
 

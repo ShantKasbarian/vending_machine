@@ -2,10 +2,10 @@ package com.vending_machine;
 
 public class SnackMachine extends VendingMachine {
 
-    public Product serveProduct(String productName) {
+    public Product serveProduct(Snack snack) {
         int balance = this.getBalance();
 
-        Product product = new ServeSnacks().serveSnack(productName);
+        Product product = new ServeSnacks().serveSnack(snack);
 
         if (balance < product.productPrice()) {
             throw new RuntimeException("insufficient funds");

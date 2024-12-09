@@ -1,6 +1,6 @@
 package com.vending_machine;
 
-public class Chips implements Product {
+public class Chips extends Product {
 
     @Override
     public String productName() {
@@ -13,7 +13,7 @@ public class Chips implements Product {
     }
 
     @Override
-    public String productDescription() {
+    public String getDescription() {
         return "cheese flavoured chips";
     }
 }
