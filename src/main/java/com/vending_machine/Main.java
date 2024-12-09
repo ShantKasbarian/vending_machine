@@ -2,15 +2,16 @@ package com.vending_machine;
 
 public class Main {
     public static void main(String[] args) {
-        CoffeeMachine coffeeMachine = new CoffeeMachine();
-        coffeeMachine.insertCoin(200);
-        coffeeMachine.insertCoin(50);
+        BeverageMachine beverageMachine = new BeverageMachine();
+        beverageMachine.insertCoin(200);
+        beverageMachine.insertCoin(50);
 
         Topping[] toppings = {Topping.MILK};
 
-        Product coffee = coffeeMachine.serveProduct(toppings, new Tea());
-        System.out.println("your new balance = " + coffeeMachine.getBalance());
+        Product coffee = beverageMachine.serveProduct(toppings, new Tea());
+        System.out.println("your new balance = " + beverageMachine.getBalance());
         System.out.println(coffee.getDescription());
+        System.out.println("=======================");
 
         SnackMachine snackMachine = new SnackMachine();
 

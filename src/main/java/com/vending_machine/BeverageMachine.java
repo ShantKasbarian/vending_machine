@@ -1,10 +1,15 @@
 package com.vending_machine;
 
-public class CoffeeMachine extends VendingMachine {
+public class BeverageMachine extends VendingMachine {
+    private ServeToppings serveToppings;
+
+    public BeverageMachine() {
+        this.serveToppings = new ServeToppings();
+    }
 
     public Product serveProduct(Topping[] toppings, Product beverage) {
         int balance = this.getBalance();
-        Product product = new ServeToppings().serveTopping(toppings, beverage);
+        Product product = serveToppings.serveTopping(toppings, beverage);
 
         int total = product.productPrice();
 
